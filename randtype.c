@@ -332,7 +332,7 @@ static char *strrep(char *str, char *find, char *repl)
 int splitter(const char *filename, int kill)
 {
 #ifdef HAVE_ZLIB
-    gzFile *fp = NULL;
+    gzFile fp = NULL;
 #else
     FILE *fp = NULL;
 #endif
@@ -432,7 +432,7 @@ int splitter(const char *filename, int kill)
 		    else
 			i = strlen(tmp);
 		    
-		    for (i = i; i < strlen(p); i++)
+		    for (;i < strlen(p); i++)
 			fprintf(stdout, "%c", p[i]);
 
 		}
